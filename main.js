@@ -98,9 +98,11 @@ function DisplayTodos () {
 		edit.addEventListener('click', (e) => {
 			const input = content.querySelector('input');
 			input.removeAttribute('readonly');
+			edit.innerHTML = 'Save';
 			input.focus();
 			input.addEventListener('blur', (e) => {
 				input.setAttribute('readonly', true);
+				edit.innerHTML = 'Edit';
 				todo.content = e.target.value;
 				localStorage.setItem('todos', JSON.stringify(todos));
 				DisplayTodos()
