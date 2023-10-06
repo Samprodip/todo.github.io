@@ -1,4 +1,14 @@
 window.addEventListener('load', () => {
+	var emptyDiv = document.getElementById('todo-list');
+	function isDivEmpty(div) {
+		return div.innerHTML.trim() === '';
+	}
+	if(isDivEmpty(emptyDiv)) {
+		document.getElementById("no-task").style.display = "block";
+	}
+	else{
+		document.getElementById("no-task").style.display = "none";
+	}
 	todos = JSON.parse(localStorage.getItem('todos')) || [];
 	const nameInput = document.querySelector('#name');
 	const newTodoForm = document.querySelector('#new-todo-form');
@@ -37,7 +47,11 @@ window.addEventListener('load', () => {
 function DisplayTodos () {
 	const todoList = document.querySelector('#todo-list');
 	todoList.innerHTML = "";
-
+	if (todos.length === 0) {
+        document.getElementById("no-task").style.display = "block";
+    } else {
+        document.getElementById("no-task").style.display = "none";
+    }
 	todos.forEach(todo => {
 		const todoItem = document.createElement('div');
 		todoItem.classList.add('todo-item');

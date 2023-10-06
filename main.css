@@ -47,7 +47,7 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 
 body {
 	/*background: var(--light);*/
-	background-image: linear-gradient(#00000071, #00000071), url(Safari.jpg);
+	background-image: linear-gradient(#00000071, #00000071), url(Sea.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -280,4 +280,17 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
+}
+.no-task{
+	margin: 70px auto;
+  	width: 220px;
+	background-color: #3a3a3ae0;
+	padding: 30px;
+	border-radius: 10px;
+	display: none;
+}
+.no-task img{
+	width: 150px;
+	height: 150px;
+	opacity: 0.8;
 }
